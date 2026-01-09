@@ -162,3 +162,23 @@ MIT License - See LICENSE file
 - **GitHub**: https://github.com/Nowaroid-Studios/devroid
 - **PyPI**: https://pypi.org/project/devroid/
 - **Issues**: https://github.com/Nowaroid-Studios/devroid/issues
+
+## Help System
+
+devroid enthält ein automatisches Help-System für Discord-Bots:
+
+```python
+from devroid import create_help_embed
+
+@bot.command()
+async def help(ctx):
+    """Zeigt alle Befehle"""
+    embed = create_help_embed(bot, prefix="!")
+    await ctx.send(embed=embed)
+```
+
+**Verfügbare Help-Funktionen:**
+- `create_help_embed(bot, prefix)` - Automatisches Help-Embed
+- `create_simple_help_embed(commands_dict, prefix)` - Manuelles Help-Embed
+- `create_command_help_embed(command, prefix)` - Detailliertes Command-Help
+- `create_categories_embed(bot, prefix)` - Kategorien-Übersicht
